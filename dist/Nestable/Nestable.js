@@ -709,8 +709,8 @@ _defineProperty(Nestable, "propTypes", {
   items: _propTypes["default"].array,
   maxDepth: _propTypes["default"].number,
   onChange: _propTypes["default"].func,
-  onDragStart: _propTypes["default"].func,
-  onDragEnd: _propTypes["default"].func,
+  onStartDrag: _propTypes["default"].func,
+  onEndDrag: _propTypes["default"].func,
   renderCollapseIcon: _propTypes["default"].func,
   renderItem: _propTypes["default"].func,
   threshold: _propTypes["default"].number
