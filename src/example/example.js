@@ -129,10 +129,10 @@ class Example extends Component {
         <h2>Basic example VVVV</h2>
 
         <Nestable
-          onDragStart={(item) => {
+          onStartDrag={(item) => {
             console.log("Start Dragging ", item)
           }}
-          onDragEnd={(data) => {
+          onEndDrag={(data) => {
             console.log("Ended Dragging ", data.dragItem, "of", data.items)
           }}
           items={items}

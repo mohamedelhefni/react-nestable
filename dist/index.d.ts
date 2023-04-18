@@ -25,12 +25,12 @@ declare module 'react-nestable' {
         targetPath: number[];
       }
     ) => void;
-    onDragStart?: (
+    onStartDrag?: (
       arg: {
         dragItem: Item;
       }
     ) => void;
-    onDragEnd?: (
+    onEndDrag?: (
       arg: {
         items: Item[];
         dragItem: Item;

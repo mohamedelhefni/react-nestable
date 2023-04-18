@@ -149,7 +149,7 @@ var Nestable = /*#__PURE__*/function (_Component) {
         e.stopPropagation();
       }
 
-      var startDragging = _this.props.onDragStart;
+      var onStartDrag = _this.props.onStartDrag;
       _this.el = (0, _utils.closest)(e.target, '.nestable-item');
 
       _this.startTrackMouse();
@@ -161,14 +161,14 @@ var Nestable = /*#__PURE__*/function (_Component) {
         itemsOld: _this.state.items
       });
 
-      startDragging({
+      onStartDrag({
         item: item
       });
     });
 
     _defineProperty(_assertThisInitialized(_this), "onDragEnd", function (e, isCancel) {
       e && e.preventDefault();
-      var onEndDrag = _this.props.onDragEnd;
+      var onEndDrag = _this.props.onEndDrag;
       var _this$state = _this.state,
           items = _this$state.items,
           dragItem = _this$state.dragItem;
