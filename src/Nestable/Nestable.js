@@ -435,7 +435,7 @@ class Nestable extends Component {
       e.preventDefault();
       e.stopPropagation();
     }
-    let { onDragStart: startDragging } = this.props
+    let { onStartDrag } = this.props
 
     this.el = closest(e.target, '.nestable-item');
 
@@ -447,14 +447,14 @@ class Nestable extends Component {
       itemsOld: this.state.items
     });
 
-    startDragging({ item })
+    onStartDrag({ item })
 
   };
 
   onDragEnd = (e, isCancel) => {
     e && e.preventDefault();
 
-    let { onDragEnd: onEndDrag } = this.props
+    let { onEndDrag } = this.props
     const { items, dragItem } = this.state;
 
     this.stopTrackMouse();

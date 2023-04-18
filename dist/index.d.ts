@@ -25,6 +25,17 @@ declare module 'react-nestable' {
         targetPath: number[];
       }
     ) => void;
+    onDragStart?: (
+      arg: {
+        dragItem: Item;
+      }
+    ) => void;
+    onDragEnd?: (
+      arg: {
+        items: Item[];
+        dragItem: Item;
+      }
+    ) => void;
     renderCollapseIcon?: (
       arg: {
         isCollapsed: boolean
@@ -40,5 +51,5 @@ declare module 'react-nestable' {
       }
     ) => React.ReactNode;
     threshold?: number;
-  }> {}
+  }> { }
 }
