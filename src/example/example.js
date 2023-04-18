@@ -126,22 +126,28 @@ class Example extends Component {
 
     return (
       <div>
-        <h2>Basic example</h2>
+        <h2>Basic example VVVV</h2>
 
         <Nestable
+          onDragStart={(item) => {
+            console.log("Start Dragging ", item)
+          }}
+          onDragEnd={(data) => {
+            console.log("Ended Dragging ", data.dragItem, "of", data.items)
+          }}
           items={items}
           collapsed={defaultCollapsed}
           renderItem={this.renderItem}
           ref={el => this.refNestable = el}
         />
 
-        <br/>
+        <br />
         <button type="button" onClick={() => this.collapse(0)}>Expand all</button>
         <button type="button" onClick={() => this.collapse(1)}>Collapse all</button>
         <button type="button" onClick={() => this.collapse(2)}>Collapse Harry only</button>
         <form style={{ display: "inline-block" }}>
           <label>
-            <input type="checkbox" name="collapsed" onChange={onDefaultCollapsed}/>
+            <input type="checkbox" name="collapsed" onChange={onDefaultCollapsed} />
             Collapsed by default
           </label>
         </form>
@@ -157,13 +163,13 @@ class Example extends Component {
         <Nestable
           items={items}
           renderItem={this.renderItem}
-          handler={<span style={handlerStyles}/>}
+          handler={<span style={handlerStyles} />}
         />
       </div>
     );
   };
 
-  confirmChange = ({dragItem, destinationParent}) => {
+  confirmChange = ({ dragItem, destinationParent }) => {
     // move to root level
     if (!destinationParent) return true;
 
@@ -200,12 +206,12 @@ class Example extends Component {
     return (
       <div>
         <select onChange={onExampleChange} value={example}>
-          {examples.map(({name}, i) => (
+          {examples.map(({ name }, i) => (
             <option key={i} value={i}>{name}</option>
           ))}
         </select>
 
-        <hr/>
+        <hr />
 
         {examples[example].renderer()}
       </div>
